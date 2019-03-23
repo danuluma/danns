@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
-import MemeMaker from "./components/Manual";
 import NavBar from "./components/NavBar";
+import Home from "./components/Home";
+import { Container } from "react-bootstrap";
 
 class App extends Component {
   render() {
@@ -10,9 +11,11 @@ class App extends Component {
       <BrowserRouter>
         <React.Fragment>
           <NavBar />
-          <Switch>
-            <Route path="/" render={() => <MemeMaker />} />
-          </Switch>
+          <Container className="App">
+            <Switch>
+              <Route path="/" render={() => <Home />} />
+            </Switch>
+          </Container>
         </React.Fragment>
       </BrowserRouter>
     );
