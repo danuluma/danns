@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Image } from "react-bootstrap";
+import ReadMoreReact from "read-more-react";
 
 class ImageShow extends Component {
   render() {
@@ -13,7 +14,15 @@ class ImageShow extends Component {
           className=""
           onClick={() => this.props.showModal(image)}
         />
-        <p className="">{image.description}</p>
+        <p className="">
+          <ReadMoreReact
+            text={image.description ? image.description : ""}
+            min={40}
+            ideal={50}
+            max={60}
+            readMoreText="... read more"
+          />
+        </p>
       </div>
     );
   }
